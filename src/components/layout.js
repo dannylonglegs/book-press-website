@@ -11,7 +11,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "../styles/main.scss"
-import ScrollNav from "./scroll-nav";
+import ScrollNav from "./scroll-nav"
+
+import { ScrollSync, ScrollSyncPane } from "react-scroll-sync"
 
 const Layout = ({ children, books }) => {
   const data = useStaticQuery(graphql`
@@ -26,15 +28,20 @@ const Layout = ({ children, books }) => {
 
   // console.log( books, "books in layout")
   return (
-    <>
+    <ScrollSync>
       <div class="layout">
-        <main id="main">
-          <Header siteTitle={data.site.siteMetadata.title || `Title`} />
-          {children}
-        </main>
-        <ScrollNav books={books} />
+        <ScrollSyncPane>
+          <main id="main">
+            <Header siteTitle={data.site.siteMetadata.title || `Title`} />
+            {children}
+          </main>
+        </ScrollSyncPane>
+
+        <ScrollSyncPane>
+          <ScrollNav books={books} />
+        </ScrollSyncPane>
       </div>
-    </>
+    </ScrollSync>
   )
 }
 
