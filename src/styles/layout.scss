@@ -12,6 +12,7 @@ main {
   max-height: 100vh;
   overflow: hidden;
   overflow-y: scroll;
+  // padding: 16px;
 }
 
 .scroll-nav {
@@ -32,7 +33,7 @@ main {
       width: 100%;
     }
     &.focused {
-      transform: scale(1.1);
+      // transform: scale(1);
       -webkit-filter: none;
       filter: none;
       transition: linear .2s;
@@ -42,4 +43,9 @@ main {
 
 section#books {
   padding-bottom: 10vh;
+  // margin: 16px;
+}
+
+.book {
+    margin: 16px;
 }
