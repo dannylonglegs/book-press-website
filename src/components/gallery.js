@@ -45,7 +45,8 @@ const Gallery = props => {
         </Slider>
         <button className="button previous" onClick={previous}>
         </button>
-        <button className="button next" onClick={next}>
+      
+        <button className="button next"  onClick={next}>
         </button>
       </div>
     )

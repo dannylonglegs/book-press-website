@@ -20,6 +20,7 @@
   .button {
     background-color: transparent;
     border: none;
+    // cursor: url(../images/arrows-slim-right-icon_1.png);
   }
 
   .button:focus {
@@ -30,6 +31,11 @@
     grid-column: 1 / 1;
     grid-row: 1 / span 1;
     z-index: 999;
+
+    cursor: url(../images/arrows-slim-right-icon_1.png), default;
+    &:hover {
+      cursor: url(../images/arrows-slim-right-icon_1.png), default;
+    }
   }
 
   .button.next {
@@ -63,5 +69,5 @@ button.slick-arrow {
 
 .slick-prev:before,
 .slick-next:before {
-  display:none;
+  display: none;
 }
