@@ -1,0 +1,45 @@
+div.layout {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  max-height: 100vh;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.scroll-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  max-height: 100vh;
+  overflow: hidden;
+  position: sticky;
+  .thumbnail {
+    width: 100%;
+    margin: 16px 0;
+    filter: blur(3px) brightness(50%) grayscale(100%);
+    transition: linear .2s;
+    .gatsby-image-wrapper {
+      height: 150px;
+      width: 100%;
+    }
+    &.focused {
+      transform: scale(1.1);
+      -webkit-filter: none;
+      filter: none;
+      transition: linear .2s;
+    }
+  }
+}
+
+section#books {
+  padding-bottom: 10vh;
+}

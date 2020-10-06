@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -10,7 +10,7 @@ const IndexPage = (props) => {
   let books = props.data.allShopifyProduct.nodes;
 
   return (
-    <Layout>
+    <Layout books={books}>
       <SEO title="Home" />
       <Books books={books}/>
     </Layout>

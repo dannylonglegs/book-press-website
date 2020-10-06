@@ -1,25 +1,63 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Gallery from "../components/gallery"
+import Book from "./book";
 
 const Books = props => {
-  console.log(props.books)
+  const [bookPositions, setBookPositions] = useState([])
+  const [currentPosition, setCurrentPosition] = useState(0)
 
-  let books = props.books.map(book => {
-    console.log(book)
+  let books = props.books.map((book, i) => {
     return (
-      <div class="book">
-        <h1>{book.title}</h1>
-        <p>{book.description}</p>
-        <Gallery images={book.images} />
-      </div>
+      <Book scrollPosition={currentPosition} book={book} index={i} />
     )
   })
 
-  return <section class="books">{books}</section>
+  useEffect(() => {
+    // getScrollPositions(books)
+    document
+      .getElementById("main")
+      .addEventListener("scroll", handleScroll)
+    return () =>
+      document
+        .getElementById("main")
+        .removeEventListener("scroll", handleScroll)
+  }, [bookPositions])
+
+  // useEffect(()=> {
+  //   focus(currentPosition, bookPositions);
+  // }, [currentPosition])
+
+  const handleScroll = event => {
+    setCurrentPosition(event.target.scrollTop);
+    // event.target.scrollTop
+  }
+
+  const getScrollPositions = async books => {
+    // let tops = []
+    // await books.map((book, i) => {
+    //   let el = document.getElementById("book-" + i).offsetTop
+    //   tops.push(el)
+    // })
+    // setBookPositions(tops)
+  }
+
+  const focus = (scrollPosition, bookPositions) => {
+    // if(scrollPosition >= bookPositions[0]){
+    //   let thumbnail = document.getElementById("thumbnail-0")
+    //   thumbnail.classList.add("focused");
+    // }
+    // if(scrollPosition >= bookPositions[1]){
+    //   let thumbnail = document.getElementById("thumbnail-1")
+    //   thumbnail.classList.add("focused");
+    // }
+  }
+
+  return (
+    <section class="books" id="books">
+      {books}
+    </section>
+  )
 }
 
 export default Books

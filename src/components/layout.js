@@ -11,8 +11,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "../styles/main.scss"
+import ScrollNav from "./scroll-nav";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, books }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,13 +23,14 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title || `Title`} />
-      <div>
-        <main>{children}</main>
-        <footer></footer>
+      <div class="layout">
+        <main id="main">
+          <Header siteTitle={data.site.siteMetadata.title || `Title`} />
+          {children}
+        </main>
+        <ScrollNav books={books} />
       </div>
     </>
   )
@@ -39,4 +41,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
