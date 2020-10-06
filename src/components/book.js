@@ -14,9 +14,9 @@ const Book = props => {
     }, [props.scrollPosition]);
 
     const getScrollPosition = () => {
-       let top = document.getElementById("book-" + props.index).offsetTop;
+       let top = document.getElementById("book-" + props.index).offsetTop - 50 ;
        let height = document.getElementById("book-" + props.index).offsetHeight;
-       let bottom = top + height;
+       let bottom = top + height - 50;
        setBottom(bottom);
        setTop(top);
     }
