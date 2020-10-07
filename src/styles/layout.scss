@@ -26,7 +26,7 @@ section.books {
 }
 
 header {
-  margin: 16px 0 16px 16px;
+  margin: 16px 0 16px 32px;
 
   display: flex;
   flex-direction: row;
@@ -110,7 +110,7 @@ header {
 }
 
 .book {
-  margin: 16px 0 16px 16px;
+  margin: 16px 0 16px 32px;
   border-bottom: 2px solid black;
   p {
     width: 90%;
