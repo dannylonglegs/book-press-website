@@ -6,6 +6,9 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 const Gallery = props => {
+
+  const [currentIndex, setCurrentIndex] = useState( 1 )
+
   const customSlider = createRef();
 
   const next = () => {
@@ -13,6 +16,10 @@ const Gallery = props => {
   }
   const previous = () => {
     customSlider.current.slickPrev()
+  }
+
+  const afterChangeHandler = (e) => {
+    setCurrentIndex(e + 1);
   }
 
   let settings = {
@@ -40,13 +47,14 @@ const Gallery = props => {
 
     return (
       <div class="gallery">
-        <Slider ref={customSlider} {...settings}>
+        <Slider ref={customSlider} {...settings} afterChange={afterChangeHandler}>
           {images}
         </Slider>
         <button className="button previous" onClick={previous}>
         </button>
       
         <button className="button next"  onClick={next}>
+          <div class="gallery-counter">{(currentIndex) + "/" + (props.images.length)}</div>
         </button>
       </div>
     )
