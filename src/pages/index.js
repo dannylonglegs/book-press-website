@@ -33,6 +33,9 @@ export const pageQuery = graphql`
             currencyCode
           }
         }
+        variants {
+          shopifyId
+        }
         description
         descriptionHtml
         images {
