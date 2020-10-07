@@ -19,8 +19,8 @@ const Header = () => (
       </Link>
     </h1>
     <div class="nav-links">
+      <Link to="/contact">→ Blog</Link>
       <Link to="/about">→ About</Link>
-      <Link to="/contact">→ Contact</Link>
     </div>
     <div class="cart">
       <Link to="/cart">Cart: 0</Link>

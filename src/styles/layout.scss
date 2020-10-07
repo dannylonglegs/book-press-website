@@ -55,6 +55,7 @@ header {
   }
 
   div.nav-links {
+    font-family: serif;
     margin-left: 16px;
     a:first-child {
       margin-left: 16px;
@@ -62,6 +63,7 @@ header {
   }
 
   .cart {
+    font-family: serif;
     margin-left: auto;
   }
 }
@@ -70,13 +72,14 @@ header {
   h1 {
     font-weight: normal;
     margin: 16px 0 8px 0;
-    font-size: 28px;
+    font-size: 24px;
   }
 
   h2 {
     font-weight: normal;
     margin: 8px 0 16px 0;
-    font-size: 24px;
+    font-size: 20px;
+    font-family: serif;
   }
 }
 
@@ -91,7 +94,7 @@ header {
   .thumbnail {
     width: 100%;
     margin: 16px 0;
-    filter: blur(3px) brightness(50%) grayscale(100%);
+    filter: blur(1px) brightness(50%) grayscale(100%);
     transition: linear 0.2s;
     .gatsby-image-wrapper {
       height: 175px;
@@ -108,9 +111,12 @@ header {
 
 .book {
   margin: 16px 0 16px 16px;
-  border-bottom: 1px dotted black;
+  border-bottom: 2px solid black;
   p {
-    line-height: 150%;
+    width: 90%;
+    line-height: 140%;
+    font-family: serif;
+    font-size: 18px;
   }
 }
 
@@ -129,6 +135,7 @@ a.title-letter {
 }
 
 footer {
+  font-size: 12px;
   height: 7.5vh;
   text-align: center;
   display: flex;
