@@ -26,6 +26,13 @@ const Books = props => {
 
   return (
     <section class="books" id="books">
+      <div class="books-title">
+        <span class="title-letter">B</span>
+        <span class="title-letter">O</span>
+        <span class="title-letter">O</span>
+        <span class="title-letter">K</span>
+        <span class="title-letter">S</span>
+      </div>
       {books}
     </section>
   )
