@@ -52,9 +52,14 @@ header {
   }
 
   div.nav-links {
+    margin-left: 16px;
     a:first-child {
       margin-left: 16px;
     }
+  }
+
+  .cart {
+    margin-left: auto;
   }
 }
 
@@ -63,14 +68,14 @@ header {
     text-transform: uppercase;
     font-weight: normal;
     margin: 16px 0 8px 0;
-    font-size: 20px;
+    font-size: 28px;
     font-style: italic;
   }
 
   h2 {
     font-weight: normal;
     margin: 8px 0 16px 0;
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
@@ -120,12 +125,12 @@ section#books {
 a.title-letter {
   margin: 2px;
   display: inline-block;
-  transform: rotate(-20deg);
+  transform: rotate(-10deg);
   // transition: 0.70s;
   transition: 999s;
   &:hover {
     // animation: rotation 2s infinite linear;
-    transform: rotate(340deg);
+    transform: rotate(350deg);
     transition: 2s;
     transition-timing-function: linear;
   }
