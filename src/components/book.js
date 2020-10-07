@@ -42,8 +42,8 @@ const Book = props => {
         <div class={ "book" } id={"book-" + props.index}>
           <h1>{props.book.title}</h1>
           <h2>{props.book.vendor}</h2>
-          <p>{props.book.description}</p>
           <Gallery images={props.book.images} />
+          <p>{props.book.description}</p>
         </div>
       )
 }
