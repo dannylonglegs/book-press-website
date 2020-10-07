@@ -32,9 +32,9 @@
     grid-row: 1 / span 1;
     z-index: 999;
 
-    cursor: url(../images/arrows-slim-right-icon_1.png), default;
+    cursor: pointer;
     &:hover {
-      cursor: url(../images/arrows-slim-right-icon_1.png), default;
+      cursor: pointer;
     }
   }
 
@@ -42,6 +42,11 @@
     grid-column: 2 / 2;
     grid-row: 1 / span 1;
     z-index: 999;
+
+    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .image-wrapper {

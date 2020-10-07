@@ -25,6 +25,7 @@ export const pageQuery = graphql`
       nodes {
         id
         title
+        vendor
         shopifyId
         priceRange {
           maxVariantPrice {

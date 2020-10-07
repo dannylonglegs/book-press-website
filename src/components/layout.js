@@ -27,6 +27,7 @@ const Layout = ({ children, books }) => {
           <main id="main">
             <Header siteTitle={data.site.siteMetadata.title || `Title`} />
             {children}
+            <footer>noname press 2020</footer>
           </main>
         </ScrollSyncPane>
 
