@@ -3,8 +3,6 @@ import Img from "gatsby-image"
 
 const ScrollNav = props => {
 
-  console.log(props.books, "books in scroll-nav")
-
   let thumbnails = props.books ? props.books.map((book, i) => {
     return (
       <div class="thumbnail" id={"thumbnail-" + i}>

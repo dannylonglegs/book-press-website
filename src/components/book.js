@@ -6,12 +6,16 @@ import { Link } from "gatsby"
 const Book = props => {
   const {
     addVariantToCart,
+    removeLineItem,
     store: { client, adding, checkout },
   } = useContext(StoreContext)
 
   const [top, setTop] = useState(0)
   const [bottom, setBottom] = useState(0)
   const [currentlyActive, setCurrentlyActive] = useState(false)
+  const [isInCart, setIsInCart] = useState(false)
+  const [idArr, setIdArr] = useState([])
+  const [lineItemId, setLineItemId] = useState(null)
 
   useEffect(() => {
     getScrollPosition()
@@ -19,10 +23,43 @@ const Book = props => {
     setFocusedThumbnail()
   }, [props.scrollPosition])
 
+  useEffect(() => {
+    setIdArray()
+    getId(idArr, props.book.title)
+    checkInCart(props.book.title)
+  }, [isInCart, checkout.lineItems])
+
+  const checkInCart = async title => {
+    let titles = await checkout.lineItems.map(item => {
+      return item.title
+    })
+
+    let inThere = await titles.includes(title)
+    setIsInCart(inThere)
+  }
+
+  const setIdArray = () => {
+    let idArr = checkout.lineItems.map(item => {
+      return {
+        title: item.title,
+        id: item.id,
+      }
+    })
+    setIdArr(idArr)
+  }
+
+  const getId = (array, title) => {
+    array.map(item => {
+      if (item.title === title) {
+        setLineItemId(item.id)
+      }
+    })
+  }
+
   const getScrollPosition = () => {
     let top = document.getElementById("book-" + props.index).offsetTop - 120
     let height = document.getElementById("book-" + props.index).offsetHeight
-    let bottom = top + height 
+    let bottom = top + height
     setBottom(bottom)
     setTop(top)
   }
@@ -45,9 +82,15 @@ const Book = props => {
   }
 
   const addToCart = () => {
-    //   console.log(props.book.variants[0].shopifyId, "props book on click")
-    addVariantToCart(props.book.variants[0].shopifyId, 1)
-    // console.log(client, adding, checkout, "lets check this out")
+    addVariantToCart(props.book.variants[0].shopifyId, 1).then(() => {
+      setIsInCart(true)
+    })
+  }
+
+  const removeFromCart = () => {
+    removeLineItem(client, checkout.id, lineItemId).then(() => {
+      setIsInCart(false)
+    })
   }
 
   return (
@@ -60,11 +103,14 @@ const Book = props => {
           <p>{props.book.description}</p>
         </div>
         <div class="buttons">
-          
-            <button class="read-more"><Link to={"/" + props.book.handle}>Read More </Link></button>
-         
-          <button class="add-to-cart" onClick={addToCart}>
-            Add To Cart
+          <Link to={"/" + props.book.handle}>
+            <button class="read-more">Read More</button>
+          </Link>
+          <button
+            class="add-to-cart"
+            onClick={isInCart ? removeFromCart : addToCart}
+          >
+            {isInCart ? "Remove From Cart" : "Add To Cart"}
           </button>
         </div>
       </div>

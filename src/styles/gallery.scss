@@ -68,6 +68,9 @@
 
   .gatsby-image-wrapper {
     height: 100%;
+    @include ipad-portrait {
+      margin: 0 32px;
+    }
     @include small {
       margin: 0 16px;
     }
