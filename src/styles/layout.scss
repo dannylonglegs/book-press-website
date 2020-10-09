@@ -2,6 +2,10 @@ div.layout {
   display: grid;
   grid-template-columns: 88% 12%;
   max-height: 100vh;
+
+  @include small {
+    grid-template-columns: 1fr;
+  }
 }
 
 div.layout2 {
@@ -47,8 +51,16 @@ section.cart {
 
 section.books {
   padding-top: 15vh;
+  @include small {
+    padding-top: 13vh;
+  }
   .books-title {
     margin: 16px 0 16px 32px;
+
+    @include small {
+      margin: 16px;
+    }
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -63,6 +75,11 @@ section.books {
   position: fixed;
   top: 0;
   width: 86%;
+
+  @include small {
+    width: 100%;
+  }
+
   z-index: 1000;
   -webkit-box-shadow: 2px 19px 10px 14px rgba(255, 255, 255, 1);
   -moz-box-shadow: 2px 19px 10px 14px rgba(255, 255, 255, 1);
@@ -77,6 +94,13 @@ header {
   flex-direction: row;
   align-items: center;
 
+  @include small {
+    padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 8vh;
+  }
+
   h1 {
     a {
       text-decoration: none;
@@ -84,6 +108,10 @@ header {
       font-weight: normal;
       font-size: 32px;
       margin: 0;
+      @include small {
+        font-size: 24px;
+        margin-left: 16px;
+      }
     }
     text-decoration: none;
     margin: 8px 0;
@@ -92,6 +120,9 @@ header {
   a {
     margin: 0 10px;
     font-size: 24px;
+    @include small {
+      font-size: 20px;
+    }
     color: black;
     text-decoration: none;
     &:hover {
@@ -102,6 +133,17 @@ header {
   div.nav-links {
     font-family: serif;
     margin-left: 16px;
+    @include small  {
+      display: flex;
+      flex-direction: row;
+
+      margin-left: 0;
+      width: 100%;
+
+      a.cart {
+        align-self: flex-end;
+      }
+    }
     a:first-child {
       margin-left: 16px;
     }
@@ -118,6 +160,9 @@ header {
     font-weight: normal;
     margin: 16px 0 8px 0;
     font-size: 24px;
+    @include small {
+      margin: 16px 16px 8px 16px;
+    }
   }
 
   h2 {
@@ -125,6 +170,9 @@ header {
     margin: 8px 0 16px 0;
     font-size: 20px;
     font-family: serif;
+    @include small {
+      margin: 8px 16px 16px 16px;
+    }
   }
 }
 
@@ -139,6 +187,10 @@ header {
 
   z-index: 10002;
 
+  @include small {
+    display: none;
+  }
+
   .thumbnail {
     width: 100%;
     margin: 16px 0;
@@ -147,6 +199,14 @@ header {
     .gatsby-image-wrapper {
       height: 175px;
       width: 100%;
+
+      @include medium-large {
+        height: 140px;
+      }
+
+      @include medium {
+        height: 100px;
+      }
     }
     &.focused {
       -webkit-filter: none;
@@ -159,12 +219,20 @@ header {
 
 .book {
   margin: 16px 0 16px 32px;
+
+  @include small {
+    margin: 0;
+  }
   border-bottom: 2px solid black;
   p {
     width: 90%;
     line-height: 140%;
     font-family: sans-serif;
     font-size: 18px;
+    @include small {
+      width: 100%;
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -205,10 +273,25 @@ footer {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
   grid-gap: 16px;
+
+  @include small {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+
+    div {
+      margin: 16px;
+    }
+
+  }
+
   .buttons {
     margin: 16px 0 16px 16px;
     display: flex;
     flex-direction: column;
+
+    @include small {
+        margin: 16px;
+    }
 
     button {
       background-color: transparent;

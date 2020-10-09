@@ -29,9 +29,7 @@ const Header = () => {
       <div class="nav-links">
         <Link to="/blog">→ Blog</Link>
         <Link to="/about">→ About</Link>
-      </div>
-      <div class="cart">
-        <Link to="/cart">Cart: {checkout.lineItems.length}</Link>
+        <Link to="/cart" className="cart">Cart: {checkout.lineItems.length}</Link>
       </div>
     </header>
   )
