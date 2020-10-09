@@ -1,16 +1,15 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout2 from "../components/layout2"
 import SEO from "../components/seo"
 
 const NotFoundPage = (props) => {
   let books = props.data.allShopifyProduct.nodes
   return (
-    <Layout books={books}>
+    <Layout2 books={books}>
       <SEO title="404: Not found" />
       <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Layout>
+    </Layout2>
   )
 }
 
@@ -42,8 +41,7 @@ export const pageQuery = graphql`
               fluid {
                 base64
                 tracedSVG
-                srcWebp
-                srcSetWebp
+                srcSet
                 originalImg
                 originalName
               }

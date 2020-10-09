@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react"
 import Gallery from "./gallery"
 import StoreContext from "./store/context"
+import { Link } from "gatsby"
 
 const Book = props => {
   const {
@@ -19,9 +20,9 @@ const Book = props => {
   }, [props.scrollPosition])
 
   const getScrollPosition = () => {
-    let top = document.getElementById("book-" + props.index).offsetTop - 50
+    let top = document.getElementById("book-" + props.index).offsetTop - 120
     let height = document.getElementById("book-" + props.index).offsetHeight
-    let bottom = top + height - 50
+    let bottom = top + height 
     setBottom(bottom)
     setTop(top)
   }
@@ -45,7 +46,7 @@ const Book = props => {
 
   const addToCart = () => {
     //   console.log(props.book.variants[0].shopifyId, "props book on click")
-    addVariantToCart(props.book.variants[0].shopifyId, 1);
+    addVariantToCart(props.book.variants[0].shopifyId, 1)
     // console.log(client, adding, checkout, "lets check this out")
   }
 
@@ -59,8 +60,12 @@ const Book = props => {
           <p>{props.book.description}</p>
         </div>
         <div class="buttons">
-          <button class="read-more">Read More</button>
-          <button class="add-to-cart" onClick={addToCart}>Add To Cart</button>
+          
+            <button class="read-more"><Link to={"/" + props.book.handle}>Read More </Link></button>
+         
+          <button class="add-to-cart" onClick={addToCart}>
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>

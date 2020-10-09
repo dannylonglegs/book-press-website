@@ -32,7 +32,6 @@ const Layout = ({ children, books }) => {
               <footer>Noname Press ©2020</footer>
             </main>
           </ScrollSyncPane>
-
           <ScrollSyncPane>
             <ScrollNav books={books} />
           </ScrollSyncPane>

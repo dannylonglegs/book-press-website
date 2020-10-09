@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { Link, graphql } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -25,6 +25,7 @@ export const pageQuery = graphql`
       nodes {
         id
         title
+        handle
         vendor
         shopifyId
         priceRange {
@@ -45,8 +46,7 @@ export const pageQuery = graphql`
               fluid {
                 base64
                 tracedSVG
-                srcWebp
-                srcSetWebp
+                srcSet
                 originalImg
                 originalName
               }

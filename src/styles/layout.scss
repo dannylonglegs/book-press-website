@@ -4,6 +4,22 @@ div.layout {
   max-height: 100vh;
 }
 
+div.layout2 {
+  display: grid;
+  grid-template-columns: 100%;
+  max-height: 100vh;
+
+  header {
+    padding: 0;
+    margin: 16px 0 0 32px;
+  }
+
+  .sticky {
+    width: 95%;
+  }
+
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -20,6 +36,14 @@ main {
 main::-webkit-scrollbar {
   display: none;
 }
+
+section.blog,
+section.about,
+section.cart {
+  padding-top: 15vh;
+  margin: 16px 0 16px 32px;
+}
+
 
 section.books {
   padding-top: 15vh;
@@ -38,7 +62,7 @@ section.books {
 .sticky {
   position: fixed;
   top: 0;
-  width: 87%;
+  width: 86%;
   z-index: 1000;
   -webkit-box-shadow: 2px 19px 10px 14px rgba(255, 255, 255, 1);
   -moz-box-shadow: 2px 19px 10px 14px rgba(255, 255, 255, 1);
