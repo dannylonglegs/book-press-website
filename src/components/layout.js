@@ -19,8 +19,7 @@ const Layout = ({ children, books }) => {
       }
     }
   `)
-
-  // console.log( books, "books in layout")
+  
   return (
     <ContextProvider>
       <ScrollSync>

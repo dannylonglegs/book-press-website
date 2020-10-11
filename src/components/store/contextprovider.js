@@ -16,8 +16,6 @@ const ContextProvider = ({ children }) => {
     shop: {},
   }
 
-  console.log(client, "client?")
-
   const [store, updateStore] = useState(initialStoreState)
 
   useEffect(() => {
@@ -134,7 +132,6 @@ const ContextProvider = ({ children }) => {
           return client.checkout
           .updateAttributes(checkoutID, note)
           .then(res => {
-            console.log(res, "Update user note")
             updateStore(prevState => {
               return { ...prevState, checkout: res }
             })
