@@ -7,7 +7,7 @@
   h1 {
     font-weight: normal;
     margin: 16px 0 8px 0;
-    font-size: 24px;
+    font-size: 32px;
     @include small {
       margin: 16px 16px 8px 16px;
     }
@@ -16,7 +16,7 @@
   h2 {
     font-weight: normal;
     margin: 8px 0 16px 0;
-    font-size: 20px;
+    font-size: 24px;
     font-family: serif;
     @include small {
       margin: 8px 16px 16px 16px;
