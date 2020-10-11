@@ -12,18 +12,18 @@ const Header = () => {
 
   return (
     <header class="sticky">
-      <h1>
+      <h1 class="title">
         <Link to="/">
-          <a class="title-letter">N</a>
-          <a class="title-letter">O</a>
-          <a class="title-letter">N</a>
-          <a class="title-letter">A</a>
-          <a class="title-letter">M</a>
-          <a class="title-letter">E</a> <a class="title-letter">P</a>
-          <a class="title-letter">R</a>
-          <a class="title-letter">E</a>
-          <a class="title-letter">S</a>
-          <a class="title-letter">S</a>
+          <span class="title-letter">N</span>
+          <span class="title-letter">O</span>
+          <span class="title-letter">N</span>
+          <span class="title-letter">A</span>
+          <span class="title-letter">M</span>
+          <span class="title-letter">E</span> <span class="title-letter">P</span>
+          <span class="title-letter">R</span>
+          <span class="title-letter">E</span>
+          <span class="title-letter">S</span>
+          <span class="title-letter">S</span>
         </Link>
       </h1>
       <div class="nav-links">

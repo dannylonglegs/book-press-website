@@ -27,11 +27,11 @@ const Books = props => {
   return (
     <section class="books" id="books">
       <div class="books-title">
-        <span class="title-letter">B</span>
-        <span class="title-letter">O</span>
-        <span class="title-letter">O</span>
-        <span class="title-letter">K</span>
-        <span class="title-letter">S</span>
+        <span class="">B</span>
+        <span class="">O</span>
+        <span class="">O</span>
+        <span class="">K</span>
+        <span class="">S</span>
       </div>
       {books}
     </section>
